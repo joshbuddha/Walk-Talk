@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2465C458B9B2E78DD4830C0B /* Pods_WalkTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */; };
+		445EF13921E5305C00D4CA05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13821E5305C00D4CA05 /* AppDelegate.swift */; };
+		445EF13B21E5305C00D4CA05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13A21E5305C00D4CA05 /* ViewController.swift */; };
+		445EF13E21E5305C00D4CA05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445EF13C21E5305C00D4CA05 /* Main.storyboard */; };
+		445EF14021E5305D00D4CA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445EF13F21E5305D00D4CA05 /* Assets.xcassets */; };
+		445EF14321E5305D00D4CA05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445EF14121E5305D00D4CA05 /* LaunchScreen.storyboard */; };
+		445EF14E21E5305D00D4CA05 /* WalkTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF14D21E5305D00D4CA05 /* WalkTalkTests.swift */; };
+		445EF15A21E5335F00D4CA05 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF15921E5335F00D4CA05 /* Track.swift */; };
+		445EF15C21E542C600D4CA05 /* DBLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF15B21E542C600D4CA05 /* DBLayer.swift */; };
+		8557D1232C6DEB3B57EB7AC6 /* Pods_WalkTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424004173DBE1B033D75A8E /* Pods_WalkTalk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		445EF14A21E5305D00D4CA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 445EF12D21E5305C00D4CA05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 445EF13421E5305C00D4CA05;
+			remoteInfo = WalkTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		149769AD565B048AD806C290 /* Pods-WalkTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		28770C0806E79DB754ADAE0F /* Pods-WalkTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalkTests/Pods-WalkTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		445EF13521E5305C00D4CA05 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		445EF13821E5305C00D4CA05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		445EF13A21E5305C00D4CA05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		445EF13D21E5305C00D4CA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		445EF13F21E5305D00D4CA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		445EF14221E5305D00D4CA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		445EF14421E5305D00D4CA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		445EF14921E5305D00D4CA05 /* WalkTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		445EF14D21E5305D00D4CA05 /* WalkTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTalkTests.swift; sourceTree = "<group>"; };
+		445EF14F21E5305D00D4CA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		445EF15921E5335F00D4CA05 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		445EF15B21E542C600D4CA05 /* DBLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLayer.swift; sourceTree = "<group>"; };
+		9424004173DBE1B033D75A8E /* Pods_WalkTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48B19F35FADBFA4F5080385 /* Pods-WalkTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk.release.xcconfig"; sourceTree = "<group>"; };
+		DF10DEECA09DA31ECB310FD8 /* Pods-WalkTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalkTests/Pods-WalkTalkTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		445EF13221E5305C00D4CA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8557D1232C6DEB3B57EB7AC6 /* Pods_WalkTalk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		445EF14621E5305D00D4CA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2465C458B9B2E78DD4830C0B /* Pods_WalkTalkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		445EF12C21E5305C00D4CA05 = {
+			isa = PBXGroup;
+			children = (
+				445EF13721E5305C00D4CA05 /* WalkTalk */,
+				445EF14C21E5305D00D4CA05 /* WalkTalkTests */,
+				445EF13621E5305C00D4CA05 /* Products */,
+				835FCC8D7C2992E778D84EEC /* Pods */,
+				CA7A69DD65D08F517A68F8EA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		445EF13621E5305C00D4CA05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				445EF13521E5305C00D4CA05 /* WalkTalk.app */,
+				445EF14921E5305D00D4CA05 /* WalkTalkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		445EF13721E5305C00D4CA05 /* WalkTalk */ = {
+			isa = PBXGroup;
+			children = (
+				445EF15821E5335200D4CA05 /* models */,
+				445EF13821E5305C00D4CA05 /* AppDelegate.swift */,
+				445EF13A21E5305C00D4CA05 /* ViewController.swift */,
+				445EF13C21E5305C00D4CA05 /* Main.storyboard */,
+				445EF13F21E5305D00D4CA05 /* Assets.xcassets */,
+				445EF14121E5305D00D4CA05 /* LaunchScreen.storyboard */,
+				445EF14421E5305D00D4CA05 /* Info.plist */,
+			);
+			path = WalkTalk;
+			sourceTree = "<group>";
+		};
+		445EF14C21E5305D00D4CA05 /* WalkTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				445EF14D21E5305D00D4CA05 /* WalkTalkTests.swift */,
+				445EF14F21E5305D00D4CA05 /* Info.plist */,
+			);
+			path = WalkTalkTests;
+			sourceTree = "<group>";
+		};
+		445EF15821E5335200D4CA05 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				445EF15921E5335F00D4CA05 /* Track.swift */,
+				445EF15B21E542C600D4CA05 /* DBLayer.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		835FCC8D7C2992E778D84EEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				149769AD565B048AD806C290 /* Pods-WalkTalk.debug.xcconfig */,
+				C48B19F35FADBFA4F5080385 /* Pods-WalkTalk.release.xcconfig */,
+				28770C0806E79DB754ADAE0F /* Pods-WalkTalkTests.debug.xcconfig */,
+				DF10DEECA09DA31ECB310FD8 /* Pods-WalkTalkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA7A69DD65D08F517A68F8EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9424004173DBE1B033D75A8E /* Pods_WalkTalk.framework */,
+				2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		445EF13421E5305C00D4CA05 /* WalkTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 445EF15221E5305D00D4CA05 /* Build configuration list for PBXNativeTarget "WalkTalk" */;
+			buildPhases = (
+				7508F8A2CE3EBFA2A43C9BFF /* [CP] Check Pods Manifest.lock */,
+				445EF13121E5305C00D4CA05 /* Sources */,
+				445EF13221E5305C00D4CA05 /* Frameworks */,
+				445EF13321E5305C00D4CA05 /* Resources */,
+				C99F71F9AA275A957C87E18E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalkTalk;
+			productName = WalkTalk;
+			productReference = 445EF13521E5305C00D4CA05 /* WalkTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		445EF14821E5305D00D4CA05 /* WalkTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 445EF15521E5305D00D4CA05 /* Build configuration list for PBXNativeTarget "WalkTalkTests" */;
+			buildPhases = (
+				7E8DA79D404C6D0D1E5EE1A2 /* [CP] Check Pods Manifest.lock */,
+				445EF14521E5305D00D4CA05 /* Sources */,
+				445EF14621E5305D00D4CA05 /* Frameworks */,
+				445EF14721E5305D00D4CA05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				445EF14B21E5305D00D4CA05 /* PBXTargetDependency */,
+			);
+			name = WalkTalkTests;
+			productName = WalkTalkTests;
+			productReference = 445EF14921E5305D00D4CA05 /* WalkTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		445EF12D21E5305C00D4CA05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Josh Kneedler";
+				TargetAttributes = {
+					445EF13421E5305C00D4CA05 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					445EF14821E5305D00D4CA05 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 445EF13421E5305C00D4CA05;
+					};
+				};
+			};
+			buildConfigurationList = 445EF13021E5305C00D4CA05 /* Build configuration list for PBXProject "WalkTalk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 445EF12C21E5305C00D4CA05;
+			productRefGroup = 445EF13621E5305C00D4CA05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				445EF13421E5305C00D4CA05 /* WalkTalk */,
+				445EF14821E5305D00D4CA05 /* WalkTalkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		445EF13321E5305C00D4CA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				445EF14321E5305D00D4CA05 /* LaunchScreen.storyboard in Resources */,
+				445EF14021E5305D00D4CA05 /* Assets.xcassets in Resources */,
+				445EF13E21E5305C00D4CA05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		445EF14721E5305D00D4CA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7508F8A2CE3EBFA2A43C9BFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalkTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E8DA79D404C6D0D1E5EE1A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalkTalkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99F71F9AA275A957C87E18E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		445EF13121E5305C00D4CA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				445EF13B21E5305C00D4CA05 /* ViewController.swift in Sources */,
+				445EF13921E5305C00D4CA05 /* AppDelegate.swift in Sources */,
+				445EF15A21E5335F00D4CA05 /* Track.swift in Sources */,
+				445EF15C21E542C600D4CA05 /* DBLayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		445EF14521E5305D00D4CA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				445EF14E21E5305D00D4CA05 /* WalkTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		445EF14B21E5305D00D4CA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 445EF13421E5305C00D4CA05 /* WalkTalk */;
+			targetProxy = 445EF14A21E5305D00D4CA05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		445EF13C21E5305C00D4CA05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				445EF13D21E5305C00D4CA05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		445EF14121E5305D00D4CA05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				445EF14221E5305D00D4CA05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		445EF15021E5305D00D4CA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		445EF15121E5305D00D4CA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		445EF15321E5305D00D4CA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 149769AD565B048AD806C290 /* Pods-WalkTalk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QN558ZNJ2W;
+				INFOPLIST_FILE = WalkTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.jetstream.WalkTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		445EF15421E5305D00D4CA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C48B19F35FADBFA4F5080385 /* Pods-WalkTalk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QN558ZNJ2W;
+				INFOPLIST_FILE = WalkTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.jetstream.WalkTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		445EF15621E5305D00D4CA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28770C0806E79DB754ADAE0F /* Pods-WalkTalkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QN558ZNJ2W;
+				INFOPLIST_FILE = WalkTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.jetstream.WalkTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkTalk.app/WalkTalk";
+			};
+			name = Debug;
+		};
+		445EF15721E5305D00D4CA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF10DEECA09DA31ECB310FD8 /* Pods-WalkTalkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QN558ZNJ2W;
+				INFOPLIST_FILE = WalkTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.jetstream.WalkTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkTalk.app/WalkTalk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		445EF13021E5305C00D4CA05 /* Build configuration list for PBXProject "WalkTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				445EF15021E5305D00D4CA05 /* Debug */,
+				445EF15121E5305D00D4CA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		445EF15221E5305D00D4CA05 /* Build configuration list for PBXNativeTarget "WalkTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				445EF15321E5305D00D4CA05 /* Debug */,
+				445EF15421E5305D00D4CA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		445EF15521E5305D00D4CA05 /* Build configuration list for PBXNativeTarget "WalkTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				445EF15621E5305D00D4CA05 /* Debug */,
+				445EF15721E5305D00D4CA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 445EF12D21E5305C00D4CA05 /* Project object */;
+}

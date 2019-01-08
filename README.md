@@ -5,7 +5,7 @@ store dialogue data for ats'a
 json-server --watch db.json
 
 //sample data
-http://localhost:3000/posts/1
+http://localhost:3000/track
 
 //ctrl c to quit
 

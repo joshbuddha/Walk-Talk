@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let tracks = myTracks else {
             return 0
         }
+        //print(tracks)
         return tracks.count
     }
     

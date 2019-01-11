@@ -13,11 +13,11 @@ import RealmSwift
 struct DBLayer {
     
     mutating func loadJSON() {
-        
+        //make sure local url is available
         guard let url = URL(string: "http://localhost:3000/track") else {
             return
         }
-        
+        //load url with URLSession
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let dataResponse = data, error == nil else {
@@ -28,13 +28,14 @@ struct DBLayer {
             do {
                 
                 let decoder = JSONDecoder()
+                //decode json to Track class with Decodable protocol
                 let trackModel = try decoder.decode([Track].self, from: dataResponse)
                 
                 let realm = try! Realm()
                 for track in trackModel {
                     try! realm.write {
+                        //add the track classes with update set to true so you can easily call the server whenever needed.
                         realm.add(track, update: true)
-                        //print("writing realm! ", track)
                     }
                 }
             } catch let parsingError {

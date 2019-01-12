@@ -7,62 +7,44 @@
 //
 
 import UIKit
-import Realm
-import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func updateBtn(_ sender: Any) {
-        getDataFromServer()
-    }
-    var myDB: DBLayer?
-    var myTracks: Results<Track>?
-    var token: NotificationToken?
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let tracks = myTracks else {
-            return 0
+    let db = DBLayer()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        db.onTracksUpdated = { [weak self] in
+            self?.tableView.reloadData()
         }
-        //print(tracks)
-        return tracks.count
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        db.loadTracks()
+    }
+    
+    @IBAction func updateBtn(_ sender: Any) {
+        db.loadTracks()
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return db.tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
-
-        guard let songTitle = myTracks?[indexPath.row]["song"] as? String else {
+        
+        guard let songTitle = db.tracks[indexPath.row].song else {
             return cell
         }
         cell.textLabel?.text = songTitle
-
+        
         return cell
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        myDB = DBLayer()
-        
-        getDataFromServer()
-        
-        let realm = try! Realm()
-        let results = realm.objects(Track.self)
-        token = results.observe { _ in
-            self.updateUI()
-        }
-
-        myTracks = realm.objects(Track.self)
-
-    }
-    func getDataFromServer() {
-        myDB?.loadJSON()
-    }
-    func updateUI() {
-        tableView.reloadData()
-    }
-    deinit {
-        token?.invalidate()
     }
 }
 

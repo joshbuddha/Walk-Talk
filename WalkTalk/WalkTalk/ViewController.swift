@@ -10,39 +10,35 @@ import UIKit
 import Realm
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func updateBtn(_ sender: Any) {
         getDataFromServer()
     }
-    var myDB: DBLayer?
+    var myDB: DBLayer = DBLayer()
     var myTracks: Results<Track>?
     var token: NotificationToken?
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let tracks = myTracks else {
-            return 0
-        }
-        //print(tracks)
-        return tracks.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
-
-        guard let songTitle = myTracks?[indexPath.row]["song"] as? String else {
-            return cell
-        }
-        cell.textLabel?.text = songTitle
-
-        return cell
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myDB = DBLayer()
+        /*
+        loadJSON() { [unowned self] (tracks: [Track]) -> () in
+            
+            self.heartOfGold = heart
+            
+            guard let heartData = self.heartOfGold else {
+                return
+            }
+            
+            print("Welcome Arthur: ", heartData)
+            print("You are: ", heartData.description)
+        }
+ */
+
+        
+        //myDB = DBLayer()
         
         getDataFromServer()
         
@@ -56,13 +52,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     func getDataFromServer() {
-        myDB?.loadJSON()
+        myDB.loadJSON()
     }
     func updateUI() {
         tableView.reloadData()
     }
     deinit {
         token?.invalidate()
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let tracks = myTracks else {
+            return 0
+        }
+        return tracks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
+        
+        guard let songTitle = myTracks?[indexPath.row]["song"] as? String else {
+            return cell
+        }
+        cell.textLabel?.text = songTitle
+        
+        return cell
     }
 }
 

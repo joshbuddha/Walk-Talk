@@ -14,6 +14,9 @@ struct DBLayer {
     
     mutating func loadJSON() {
         //make sure local url is available
+        //https://api.iextrading.com/1.0/stock/market/collection/tag?collectionName=Computer%20Hardware
+        //https://ws-api.iextrading.com/1.0/stock/market/collection/sector?collectionName=Materials
+        //http://localhost:3000/track
         guard let url = URL(string: "http://localhost:3000/track") else {
             return
         }
@@ -26,7 +29,7 @@ struct DBLayer {
             }
             
             do {
-                
+                print("data loaded from server")
                 let decoder = JSONDecoder()
                 //decode json to Track class with Decodable protocol
                 let trackModel = try decoder.decode([Track].self, from: dataResponse)

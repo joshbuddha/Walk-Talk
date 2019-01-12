@@ -10,14 +10,33 @@ import Foundation
 import Realm
 import RealmSwift
 
-struct DBLayer {
+class DBLayer {
     
-    mutating func loadJSON() {
-        //make sure local url is available
-        guard let url = URL(string: "http://localhost:3000/track") else {
-            return
+    var onTracksUpdated: (() -> Void)? {
+        didSet {
+            let realm = try! Realm()
+            let results = realm.objects(Track.self)
+            self.token = results.observe { [weak self] _ in
+                self?.onTracksUpdated?()
+            }
         }
-        //load url with URLSession
+    }
+    
+    var tracks: [Track] {
+        let realm = try! Realm()
+        return realm.objects(Track.self).map { $0 }
+    }
+    
+    private var token: NotificationToken?
+    
+    func loadTracks() {
+        
+        let url = URL(fileURLWithPath: "/Users/Work/Documents/GitHub/Walk-Talk/db.json")
+//        guard let url = URL(string: "http://localhost:3000/track") else {
+//            return
+//        }
+        
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let dataResponse = data, error == nil else {
@@ -28,21 +47,33 @@ struct DBLayer {
             do {
                 
                 let decoder = JSONDecoder()
-                //decode json to Track class with Decodable protocol
-                let trackModel = try decoder.decode([Track].self, from: dataResponse)
+                let trackModel = try decoder.decode(DB.self, from: dataResponse)
                 
                 let realm = try! Realm()
-                for track in trackModel {
-                    try! realm.write {
-                        //add the track classes with update set to true so you can easily call the server whenever needed.
+                try! realm.write {
+                    //Writing them all at once so we don't get constant updates
+                    for track in trackModel.track {
                         realm.add(track, update: true)
+                        //print("writing realm! ", track)
                     }
                 }
+                
             } catch let parsingError {
                 print("Error", parsingError)
             }
-            
         }
         task.resume()
     }
+    
+    deinit {
+        token?.invalidate()
+    }
+    
+    
+    //Cheat to load local json because I couldn't get json-server to work
+    struct DB: Decodable {
+        var track: [Track]
+    }
 }
+
+

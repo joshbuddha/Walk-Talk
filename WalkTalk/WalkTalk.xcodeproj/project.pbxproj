@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2465C458B9B2E78DD4830C0B /* Pods_WalkTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */; };
+		4431793721EA781700B56D55 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 4431793621EA781700B56D55 /* db.json */; };
 		445EF13921E5305C00D4CA05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13821E5305C00D4CA05 /* AppDelegate.swift */; };
 		445EF13B21E5305C00D4CA05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13A21E5305C00D4CA05 /* ViewController.swift */; };
 		445EF13E21E5305C00D4CA05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445EF13C21E5305C00D4CA05 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		149769AD565B048AD806C290 /* Pods-WalkTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		28770C0806E79DB754ADAE0F /* Pods-WalkTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalkTests/Pods-WalkTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4431793621EA781700B56D55 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = ../../../db.json; sourceTree = "<group>"; };
 		445EF13521E5305C00D4CA05 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445EF13821E5305C00D4CA05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		445EF13A21E5305C00D4CA05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				445EF15921E5335F00D4CA05 /* Track.swift */,
 				445EF15B21E542C600D4CA05 /* DBLayer.swift */,
+				4431793621EA781700B56D55 /* db.json */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				445EF14321E5305D00D4CA05 /* LaunchScreen.storyboard in Resources */,
+				4431793721EA781700B56D55 /* db.json in Resources */,
 				445EF14021E5305D00D4CA05 /* Assets.xcassets in Resources */,
 				445EF13E21E5305C00D4CA05 /* Main.storyboard in Resources */,
 			);

@@ -31,10 +31,14 @@ class DBLayer {
     
     func loadTracks() {
         
-        let url = URL(fileURLWithPath: "/Users/Work/Documents/GitHub/Walk-Talk/db.json")
-//        guard let url = URL(string: "http://localhost:3000/track") else {
-//            return
-//        }
+        //let url = URL(fileURLWithPath: "/Users/ranger/Documents/jetstream-repo/walktalk/db.json")
+        //let url = URL(fileURLWithPath: "/Users/Work/Documents/GitHub/Walk-Talk/db.json")
+        //let url = Bundle.main.url(forResource: "db", withExtension: "json")
+
+        guard let url = URL(string: "http://localhost:3000/track") else {
+            return
+        }
+
         
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -47,12 +51,12 @@ class DBLayer {
             do {
                 
                 let decoder = JSONDecoder()
-                let trackModel = try decoder.decode(DB.self, from: dataResponse)
+                let trackModel = try decoder.decode([Track].self, from: dataResponse)
                 
                 let realm = try! Realm()
                 try! realm.write {
                     //Writing them all at once so we don't get constant updates
-                    for track in trackModel.track {
+                    for track in trackModel {
                         realm.add(track, update: true)
                         //print("writing realm! ", track)
                     }

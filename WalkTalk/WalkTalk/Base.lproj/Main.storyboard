@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="501"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trackCell" id="7Xd-gW-bSJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="7Xd-gW-bSJ" customClass="TrackCell" customModule="WalkTalk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Xd-gW-bSJ" id="V7A-uc-zYJ">
@@ -57,21 +57,34 @@
                                     <action selector="updateBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2z1-u6-87U"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbN-No-tp9">
+                                <rect key="frame" x="28" y="626" width="319" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="INA-Wu-rVg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MbN-No-tp9" secondAttribute="bottom" constant="20" id="MMc-GD-aZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MbN-No-tp9" secondAttribute="trailing" constant="28" id="TNm-Dd-tbg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0fs-0H-PlI" secondAttribute="trailing" constant="28" id="TjD-88-FWN"/>
                             <constraint firstItem="WR3-M2-pTz" firstAttribute="top" secondItem="qAi-Le-YbX" secondAttribute="bottom" constant="33" id="ccl-Yn-2AM"/>
                             <constraint firstItem="WR3-M2-pTz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dHJ-Xc-BRW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WR3-M2-pTz" secondAttribute="bottom" constant="75" id="g8U-mP-eWN"/>
+                            <constraint firstItem="MbN-No-tp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="dRz-7K-6sD"/>
                             <constraint firstItem="qAi-Le-YbX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="gjk-dw-4e4"/>
                             <constraint firstItem="WR3-M2-pTz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h0K-UL-IIY"/>
                             <constraint firstItem="0fs-0H-PlI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="hCo-0d-fVT"/>
                             <constraint firstItem="qAi-Le-YbX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hO5-1s-wSh"/>
+                            <constraint firstItem="MbN-No-tp9" firstAttribute="top" secondItem="WR3-M2-pTz" secondAttribute="bottom" constant="34" id="xI1-AC-Ivc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="selectedTrack" destination="MbN-No-tp9" id="v4C-Rg-PZ1"/>
                         <outlet property="tableView" destination="WR3-M2-pTz" id="7ob-pJ-0iu"/>
                     </connections>
                 </viewController>

@@ -11,13 +11,21 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var selectedTrack: UILabel!
     
     let db = DBLayer()
+    var coordinator = Coordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         db.onTracksUpdated = { [weak self] in
             self?.tableView.reloadData()
+        }
+        
+        coordinator.onStateChange = { [weak self] state in
+            self?.selectedTrack.text = state.title
+            
+            print("present controller based on index ", state.songIndex)
         }
     }
     
@@ -37,7 +45,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
+        
+        let cell: TrackCell = tableView.dequeueReusableCell(for: indexPath)
         
         guard let songTitle = db.tracks[indexPath.row].song else {
             return cell
@@ -45,6 +54,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell.textLabel?.text = songTitle
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard let songTitle = db.tracks[indexPath.row].song else {
+            return
+        }
+        
+        coordinator.notify(event: .tappedSong(indexPath, songTitle))
+        
+        
     }
 }
 

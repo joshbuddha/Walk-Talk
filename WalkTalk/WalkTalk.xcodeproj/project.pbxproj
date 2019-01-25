@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2465C458B9B2E78DD4830C0B /* Pods_WalkTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */; };
+		44094A1521F8DB9300F6FDC0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44094A1421F8DB9300F6FDC0 /* Reusable.swift */; };
+		44094A1721F8DC6F00F6FDC0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44094A1621F8DC6F00F6FDC0 /* UITableView.swift */; };
+		44094A1921F8DEBA00F6FDC0 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44094A1821F8DEBA00F6FDC0 /* TrackCell.swift */; };
+		44094A5D21FB8D4E00F6FDC0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44094A5C21FB8D4E00F6FDC0 /* Coordinator.swift */; };
 		4431793721EA781700B56D55 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 4431793621EA781700B56D55 /* db.json */; };
 		445EF13921E5305C00D4CA05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13821E5305C00D4CA05 /* AppDelegate.swift */; };
 		445EF13B21E5305C00D4CA05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445EF13A21E5305C00D4CA05 /* ViewController.swift */; };
@@ -34,6 +38,10 @@
 		149769AD565B048AD806C290 /* Pods-WalkTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalk/Pods-WalkTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		28770C0806E79DB754ADAE0F /* Pods-WalkTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTalkTests/Pods-WalkTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F2A3578D314815A1C288DE6 /* Pods_WalkTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44094A1421F8DB9300F6FDC0 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		44094A1621F8DC6F00F6FDC0 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		44094A1821F8DEBA00F6FDC0 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		44094A5C21FB8D4E00F6FDC0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4431793621EA781700B56D55 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = ../../../db.json; sourceTree = "<group>"; };
 		445EF13521E5305C00D4CA05 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445EF13821E5305C00D4CA05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +80,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44094A5E21FB921800F6FDC0 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				44094A5C21FB8D4E00F6FDC0 /* Coordinator.swift */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
+		44094A5F21FB924100F6FDC0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				445EF13A21E5305C00D4CA05 /* ViewController.swift */,
+				44094A1421F8DB9300F6FDC0 /* Reusable.swift */,
+				44094A1621F8DC6F00F6FDC0 /* UITableView.swift */,
+				44094A1821F8DEBA00F6FDC0 /* TrackCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		445EF12C21E5305C00D4CA05 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +122,10 @@
 		445EF13721E5305C00D4CA05 /* WalkTalk */ = {
 			isa = PBXGroup;
 			children = (
+				44094A5F21FB924100F6FDC0 /* views */,
+				44094A5E21FB921800F6FDC0 /* state */,
 				445EF15821E5335200D4CA05 /* models */,
 				445EF13821E5305C00D4CA05 /* AppDelegate.swift */,
-				445EF13A21E5305C00D4CA05 /* ViewController.swift */,
 				445EF13C21E5305C00D4CA05 /* Main.storyboard */,
 				445EF13F21E5305D00D4CA05 /* Assets.xcassets */,
 				445EF14121E5305D00D4CA05 /* LaunchScreen.storyboard */,
@@ -321,10 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44094A5D21FB8D4E00F6FDC0 /* Coordinator.swift in Sources */,
 				445EF13B21E5305C00D4CA05 /* ViewController.swift in Sources */,
 				445EF13921E5305C00D4CA05 /* AppDelegate.swift in Sources */,
 				445EF15A21E5335F00D4CA05 /* Track.swift in Sources */,
+				44094A1521F8DB9300F6FDC0 /* Reusable.swift in Sources */,
 				445EF15C21E542C600D4CA05 /* DBLayer.swift in Sources */,
+				44094A1721F8DC6F00F6FDC0 /* UITableView.swift in Sources */,
+				44094A1921F8DEBA00F6FDC0 /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

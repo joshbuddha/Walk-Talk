@@ -35,15 +35,14 @@ class Coordinator {
         
         //make copy
         var newState = oldState
-        
-        //store last event in state
-        newState.lastEvent = event
+        newState.action = nil
         
         switch event {
         case .loadTracks:
             store.loadTracks()
         case let .tracksLoaded(tracks):
             newState.tracks = tracks
+            newState.action = .reloadTable
             
         case let .tapped(track: track):
             newState.selectedTrack = track
@@ -63,4 +62,10 @@ struct State {
     var tracks: [Track] = []
     var selectedTrack: Track?
     var lastEvent: Event?
+    var action: Action?
+}
+
+enum Action {
+    case reloadTable
+    //case navigate(Track)
 }

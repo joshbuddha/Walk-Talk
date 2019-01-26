@@ -12,12 +12,12 @@ import RealmSwift
 
 class DBLayer {
     
-    var onTracksUpdated: (() -> Void)? {
+    var onTracksUpdated: (([Track]) -> Void)? {
         didSet {
             let realm = try! Realm()
             let results = realm.objects(Track.self)
-            self.token = results.observe { [weak self] _ in
-                self?.onTracksUpdated?()
+            self.token = results.observe { [unowned self] tracks in
+                self.onTracksUpdated?(self.tracks)
             }
         }
     }
@@ -34,11 +34,11 @@ class DBLayer {
         //let url = URL(fileURLWithPath: "/Users/ranger/Documents/jetstream-repo/walktalk/db.json")
         //let url = URL(fileURLWithPath: "/Users/Work/Documents/GitHub/Walk-Talk/db.json")
         //let url = Bundle.main.url(forResource: "db", withExtension: "json")
-
+        
         guard let url = URL(string: "http://localhost:3000/track") else {
             return
         }
-
+        
         
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

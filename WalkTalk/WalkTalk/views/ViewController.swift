@@ -13,42 +13,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectedTrack: UILabel!
     
-    let db = DBLayer()
     var coordinator = Coordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        db.onTracksUpdated = { [weak self] in
-            self?.tableView.reloadData()
-        }
         
         coordinator.onStateChange = { [weak self] state in
-            self?.selectedTrack.text = state.title
-            
-            print("present controller based on index ", state.songIndex)
+            self?.selectedTrack.text = state.selectedTrack?.song ?? ""
+            self?.tableView.reloadData()
+            //print("present controller based on index ", state.songIndex)
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        db.loadTracks()
+        coordinator.notify(event: .loadTracks)
     }
     
     @IBAction func updateBtn(_ sender: Any) {
-        db.loadTracks()
+        coordinator.notify(event: .loadTracks)
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    private var tracks: [Track] {
+        return coordinator.state.tracks
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return db.tracks.count
+        return tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: TrackCell = tableView.dequeueReusableCell(for: indexPath)
         
-        guard let songTitle = db.tracks[indexPath.row].song else {
+        guard let songTitle = tracks[indexPath.row].song else {
             return cell
         }
         cell.textLabel?.text = songTitle
@@ -57,14 +57,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        guard let songTitle = db.tracks[indexPath.row].song else {
-            return
-        }
         
-        coordinator.notify(event: .tappedSong(indexPath, songTitle))
+        let track = tracks[indexPath.row]
         
-        
+        coordinator.notify(event: .tapped(track: track))
     }
 }
 

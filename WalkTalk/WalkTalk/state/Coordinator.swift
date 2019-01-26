@@ -16,6 +16,15 @@ class Coordinator {
         }
     }
     
+    private let store = DBLayer()
+    
+    init() {
+        
+        store.onTracksUpdated = { tracks in
+            self.notify(event: .tracksLoaded(tracks))
+        }
+    }
+    
     var onStateChange: ((State) -> Void)?
     
     func notify(event: Event) {
@@ -28,10 +37,13 @@ class Coordinator {
         var newState = oldState
         
         switch event {
+        case .loadTracks:
+            store.loadTracks()
+        case let .tracksLoaded(tracks):
+            newState.tracks = tracks
             
-        case let .tappedSong(indexPath, song):
-            newState.title = song
-            newState.songIndex = indexPath.row
+        case let .tapped(track: track):
+            newState.selectedTrack = track
         }
         
         return newState
@@ -39,10 +51,12 @@ class Coordinator {
 }
 
 enum Event {
-    case tappedSong(IndexPath, String)
+    case loadTracks
+    case tracksLoaded([Track])
+    case tapped(track: Track)
 }
 
 struct State {
-    var title: String = ""
-    var songIndex: Int = 0
+    var tracks: [Track] = []
+    var selectedTrack: Track?
 }

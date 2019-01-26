@@ -36,6 +36,9 @@ class Coordinator {
         //make copy
         var newState = oldState
         
+        //store last event in state
+        newState.lastEvent = event
+        
         switch event {
         case .loadTracks:
             store.loadTracks()
@@ -59,4 +62,5 @@ enum Event {
 struct State {
     var tracks: [Track] = []
     var selectedTrack: Track?
+    var lastEvent: Event?
 }

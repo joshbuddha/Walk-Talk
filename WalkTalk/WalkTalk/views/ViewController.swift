@@ -20,17 +20,15 @@ class ViewController: UIViewController {
         
         coordinator.onStateChange = { [weak self] state in
             
-            switch state.lastEvent {
-            case .loadTracks?:
+            switch state.action {
+            case .reloadTable?:
                 self?.tableView.reloadData()
-            case .tracksLoaded(_)?:
-                self?.tableView.reloadData()
-            case .tapped(track: _)?:
-                self?.selectedTrack.text = state.selectedTrack?.song ?? ""
-            default:
-                print("def")
+            //case let .navigate(track)?:
+                //nav.push(vc)
+            default: break
             }
-            //print("present controller based on index ", state.songIndex)
+            
+            self?.selectedTrack.text = state.selectedTrack?.song ?? ""
         }
     }
     

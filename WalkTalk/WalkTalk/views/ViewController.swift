@@ -19,8 +19,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         coordinator.onStateChange = { [weak self] state in
-            self?.selectedTrack.text = state.selectedTrack?.song ?? ""
-            self?.tableView.reloadData()
+            
+            switch state.lastEvent {
+            case .loadTracks?:
+                self?.tableView.reloadData()
+            case .tracksLoaded(_)?:
+                self?.tableView.reloadData()
+            case .tapped(track: _)?:
+                self?.selectedTrack.text = state.selectedTrack?.song ?? ""
+            default:
+                print("def")
+            }
             //print("present controller based on index ", state.songIndex)
         }
     }
